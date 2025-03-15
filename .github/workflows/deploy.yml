@@ -26,10 +26,10 @@ jobs:
       - name: Construir a aplicação
         run: npm run build
 
-      - name: Subir artefatos de release
-        uses: actions/upload-artifact@v3
+      - name: Subir artefato da release
+        uses: actions/upload-artifact@v4
         with:
-          name: app-artifact
+          name: teste-artefato
           path: index.html
 
   deploy:
@@ -44,4 +44,5 @@ jobs:
       - name: Realizar o deploy para o ambiente de prod 
         run: |
           echo "Fazendo deploy da aplicação para o ambiente de producao"
+          run: ls 
 
