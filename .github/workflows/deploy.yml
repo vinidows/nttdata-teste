@@ -29,6 +29,14 @@ jobs:
       - name: Construir a aplicação
         run: npm run build
 
+      - name: Modificar o HTML com o commit hash
+        run: |
+          # Pega o commit hash
+          COMMIT_HASH=$(git rev-parse --short HEAD)
+          
+          # Substitui o marcador no index.html original
+          sed -i "s|<!-- COMMIT_HASH -->|${COMMIT_HASH}|g" index.html
+
       - name: Subir artefato da release
         uses: actions/upload-artifact@v4
         with:
