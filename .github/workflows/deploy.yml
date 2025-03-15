@@ -30,7 +30,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: app-artifact
-          path: ../index.html
+          path: index.html
 
   deploy:
     runs-on: ubuntu-latest
