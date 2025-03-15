@@ -1,0 +1,13 @@
+{
+  "name": "app-web-deploy",
+  "version": "1.0.0",
+  "description": "Aplicação web em Js",
+  "main": "index.html",
+  "scripts": {
+    "test": "jest",
+    "build": "echo 'Contruindo'"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
