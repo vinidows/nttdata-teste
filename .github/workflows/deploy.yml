@@ -20,6 +20,11 @@ jobs:
       - name: Instalar as dependencias
         run: npm install
 
+      
+      
+      - name: verificar html
+        run: cat index.html
+
       - name: Instalar Jest 
         run: npm install -g jest
 
