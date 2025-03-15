@@ -31,11 +31,10 @@ jobs:
 
       - name: Modificar o HTML com o commit hash
         run: |
-          # Pega o commit hash
           COMMIT_HASH=$(git rev-parse --short HEAD)
-          
-          # Substitui o marcador no index.html original
-          sed -i "s|<!-- COMMIT_HASH -->|${COMMIT_HASH}|g" index.html
+          echo "Commit Hash gerado: $COMMIT_HASH"  # Exibe o commit hash
+          sed -i "s|<!-- COMMIT_HASH -->|$COMMIT_HASH|g" index.html  # Substitui o marcador pelo hash
+          cat index.html  # Exibe o conteúdo do index.html depois da modificação
 
       - name: Subir artefato da release
         uses: actions/upload-artifact@v4
