@@ -17,15 +17,10 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Instalar as dependencias
+      - name: Instalar as dependências
         run: npm install
 
-      
-      
-      - name: verificar html
-        run: cat index.html
-
-      - name: Instalar Jest 
+      - name: Instalar Jest
         run: npm install -g jest
 
       - name: Rodar os testes
@@ -46,11 +41,9 @@ jobs:
     environment:
       name: prod
     steps:
-      - name:  repositorio
+      - name: Obter o repositório novamente
         uses: actions/checkout@v3
 
-      - name: Realizar o deploy para o ambiente de prod 
+      - name: Realizar o deploy para o ambiente de produção
         run: |
-          echo "Fazendo deploy da aplicação para o ambiente de producao"
-          run: ls 
-
+          echo "Fazendo deploy da aplicação para o ambiente de produção"
